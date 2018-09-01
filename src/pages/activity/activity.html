@@ -1,0 +1,31 @@
+<!--
+  Generated template for the ActivityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <at-menu></at-menu>
+
+</ion-header>
+
+
+<ion-content>
+			<div class="dashboard6-row">
+				<p type="submit" class="login-input10"><label class="label-input"></label><label></label></p>
+				<p type="submit" class="login-input15"><label>Actividades</label></p>
+				<p type="submit" class="login-input16"><label>Unidad I</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" (click)="activityindi(item[0], item[3])" *ngIf="item[2] == 1"><label>{{item[1]}}</label></p>
+				</div>
+				<p type="submit" class="login-input16"><label>Unidad II</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" (click)="activityindi(item[0], item[3])" *ngIf="item[2] == 2"><label>{{item[1]}}</label></p>
+				</div>
+				<p type="submit" class="login-input16"><label>Unidad III</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" (click)="activityindi(item[0], item[3])" *ngIf="item[2] == 3"><label>{{item[1]}}</label></p>
+				</div>
+			</div>
+</ion-content>

@@ -1,0 +1,66 @@
+page-register {
+.top-bar-logo-row{
+	background-color:#fff;
+	width:100%;	
+	float:left;
+}
+
+.registro-row{
+	background-color:#b71e30;
+	width:100%;
+	height: 55px;
+	padding-top:10px;
+	float:left;
+	margin-top: 16px;
+}
+.registro-url{
+	margin-top:10px ;
+	font-size:20px;
+	width:44%;
+	margin-left:28%;
+	margin-right:28%;
+	margin-top:2px;
+	text-align:center;
+	margin-bottom:15px;
+	color:white !important;
+	float:left;
+}
+.Aulatix-input{
+	padding: 18px 15px!important;
+	width:100%;
+	height:50px !important;
+	font-size:14px !important;
+}
+.Aulatix-select{
+	padding: 14px 15px!important;
+	width:100%;
+	height:50px !important;
+	font-size:14px !important;
+	border-width:0px !important;
+}
+.Aulatix-select > option[disabled] { 
+	color:#808080 !important;
+} 
+.Aulatix-foto{
+	width:30%;
+	height:auto;
+	margin:20px 35% 10px;
+
+}
+.login-input5{
+	background-color:#b71e30;
+	color:white !important;
+	width: 44%;
+	height:35px;
+	margin-left:28%;
+	margin-right:28%;
+	margin-top:30px;
+	margin-bottom:30px;
+	border-radius: 28px;
+	text-align:center;
+	font-size:16px;
+	/*padding:9px 25px !important;*/
+	
+	
+}
+}

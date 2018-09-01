@@ -1,0 +1,106 @@
+page-login {
+	/***************Login****************/
+	.logo-login{
+		width:74%;
+		height:auto;
+		margin-left:13%;
+		margin-right:13%;
+		margin-top:80px;
+		margin-bottom:40px;
+	}
+	.body-login{
+		margin-left:0 !important;
+		margin-right:0 !important;
+		background-color:white;
+	}
+	.login-logo-row{
+		background-color:#fff;
+		width:100%;
+		height:233px;
+		
+	}
+	.login-container{
+		background-color:#b71e30;
+		width:100%;
+		padding-bottom:70px;
+	}
+	.login-input1{
+		background-color:#cd636f;
+		width: 66%;
+		height:34px !important;
+		margin-left:17%;
+		margin-right:17%;
+		margin-top:35px;
+		margin-bottom:0px;
+		border-radius: 28px;
+		font-size:12px !important;
+		padding:18px 25px !important;
+		color:white !important;
+		letter-spacing: 2px;
+	}
+	.login-input2{
+		background-color:#cd636f;
+		width: 66%;
+		height:34px !important;
+		margin-left:17%;
+		margin-right:17%;
+		margin-top:10px;
+		margin-bottom:0px;
+		border-radius: 28px;
+		font-size:12px !important;
+		padding:18px 25px !important;
+		color:white !important;
+		letter-spacing: 2px;
+	}
+	.login-input1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: white;
+	}
+	.login-input2::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: white;
+	}
+
+	.login-input3{
+		background-color:white;
+		color:white;
+		width: 48%;
+		height:30px;
+		margin-left:26%;
+		margin-right:26%;
+		margin-top:25px;
+		margin-bottom:0px;
+		border-radius: 28px;
+		text-align:center;
+		font-size:12px;
+		/*padding:9px 25px !important;*/
+		color:#cd636f !important;
+	}
+	.login-input4{
+		background-color:white;
+		color:white;
+		width: 48%;
+		height:30px;
+		margin-left:26%;
+		margin-right:26%;
+		margin-top:2px;
+		margin-bottom:0px;
+		border-radius: 28px;
+		text-align:center;
+		font-size:12px;
+		/*padding:9px 25px !important;*/
+		color:#cd636f !important;
+	}
+	.login-url{
+		margin-top:2px;
+		font-size:12px;
+		width:100%;
+		margin-top:4px;
+		text-align:center;
+		margin-bottom:4px;
+		
+	}
+	.login-url>a{
+	color:white !important;
+	text-decoration: underline;
+
+	}
+}

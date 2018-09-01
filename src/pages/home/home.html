@@ -1,0 +1,25 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <at-menu></at-menu>
+
+</ion-header>
+
+
+<ion-content>
+	<div class="dashboard5-row" >
+	    <div *ngFor="let item of arrayCosas; index as i; first as isFirst; last as isLast">
+			<input  type="submit" *ngIf=" i%2 == 0 && isFirst == true" (click)="mateindi(item[0], item[1])" class="login-input62 login-input-espacio" value={{item[1]}}>
+			<input  type="submit" *ngIf=" i%2 == 0 && isFirst == false" (click)="mateindi(item[0], item[1])" class="login-input62 " value={{item[1]}}>
+			<input  type="submit" *ngIf=" i%2 == 1" class="login-input61" (click)="mateindi(item[0], item[1])" value={{item[1]}}>
+			<input  type="submit" *ngIf=" i%2 == 1 && isLast == true" class="login-input62 " (click)="SemesPage()" value="Tienda">
+			<input  type="submit" *ngIf=" i%2 == 0 && isLast == true" class="login-input61" (click)="SemesPage()" value="Tienda">
+		</div>
+		<input  type="submit" *ngIf="nada == true" class="login-input62 login-input-espacio2" (click)="SemesPage()" value="Tienda">
+	</div>
+</ion-content>

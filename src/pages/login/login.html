@@ -1,0 +1,23 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+	<div class="body-login" scroll="false">
+		<div class="login-logo-row">
+			<img src="assets/imgs/logo_login.png" alt="aulatix logo" class="logo-login"> 
+		</div>
+		<div id="Row" class="row">
+			<div class="login-container">
+				<input type="text" class="login-input1" [(ngModel)]="loginData.username" name="luser" placeholder="Usuario">
+				<input type="password" class="login-input2" [(ngModel)]="loginData.password" name="lpass" placeholder="Contraseña">
+				<input id="Entrar" type="submit" class="login-input3" (click)="nextPage()" value="Entrar">
+				<p class="login-url" ><a href="#">¿Olvidaste tu contraseña?</a></p>
+				<input id="Registrarse" type="submit" class="login-input4" (click)="registroPage()" value="Registrarse">
+			</div>
+		</div>
+	</div>
+</ion-content>

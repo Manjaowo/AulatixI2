@@ -1,0 +1,14 @@
+{
+  "name": "AulatixI2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxys": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://aulatix.com/api"
+    }
+  ],
+  "pro_id": "86057e37"
+}

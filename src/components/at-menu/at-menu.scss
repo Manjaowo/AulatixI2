@@ -1,0 +1,68 @@
+at-menu {
+	.logo-top-bar{
+		width:60%;
+		height:auto;
+		margin-left:0%;
+		margin-right:0%;
+	margin-top:10px;
+	float:left;
+	}
+	.btn-top-bar{
+		width:12%;
+		height: 45px;
+		margin-left:3%;
+		margin-right:5%;
+		margin-top:23px;
+		margin-bottom:2px;
+		border-style: solid;
+		border-width: 4px;
+		border-color:#808080;
+		float:left;
+		}
+	.btn-top-bar-1{
+		width: 80%;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:8px;
+		margin-bottom:2px;
+		height:0px;
+		border-style: solid;
+		border-width: 4px 0px 0px 0px;
+		border-color:#808080;
+	}	
+	.btn-top-bar-2{
+		width: 80%;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:5px;
+		margin-bottom:5px;
+		height:0px;
+		border-style: solid;
+		border-width: 4px 0px 0px 0px;
+		border-color:#808080;
+	}
+	.btn-top-bar-3{
+		width: 80%;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:2px;
+		margin-bottom:0px;
+		height:0px;
+		border-style: solid;
+		border-width: 4px 0px 0px 0px;
+		border-color:#808080;
+	}
+	.per-top-bar{
+		width:15%;
+		height: 50px;
+		margin-left:3%;
+		margin-right:2%;
+		margin-top:10px;
+		margin-bottom:0px;
+		float:left;
+	}
+	.per-top-bar>img{
+		width:100%;
+		height: auto;
+	}
+}
