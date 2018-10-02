@@ -3,7 +3,7 @@ page-activity {
 	float:left;
 	width:100%;
 	height:500px;
-	
+	margin-top:78px;
 }
 .login-input10{
 	background-color:#f9f9f9;
@@ -92,6 +92,19 @@ page-activity {
 	margin-left:5% ;
 	margin-bottom:12px ;
 	
+	float:left;
+}
+.login-input17>a{
+	width:90%;
+	text-align:left;
+	font-size:14px;
+	height:21px;
+	margin-top:12px ;
+	margin-right:5% ;
+	margin-left:5% ;
+	margin-bottom:12px ;
+	color: #fff !important;
+	text-decoration: none !important	;	
 	float:left;
 }
 }

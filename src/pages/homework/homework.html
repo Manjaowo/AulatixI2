@@ -1,0 +1,25 @@
+<!--
+  Generated template for the HomeworkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+  <at-menu></at-menu>
+<ion-content>
+			<div class="dashboard6-row">
+				<p type="submit" class="login-input10"><label class="label-input"></label><label></label></p>
+				<p type="submit" class="login-input15"><label>Tareas</label></p>
+				<p type="submit" class="login-input16"><label>Unidad I</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" *ngIf="item[2] == 1"><a href="https://aulatix.com/uploads/activities/pdf/{{item[3]}}">{{item[1]}}</a></p>
+				</div>
+				<p type="submit" class="login-input16"><label>Unidad II</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" *ngIf="item[2] == 2"><a href="https://aulatix.com/uploads/activities/pdf/{{item[3]}}">{{item[1]}}</a></p>
+				</div>
+				<p type="submit" class="login-input16"><label>Unidad III</label></p>
+				<div *ngFor="let item of arrayCosas">
+					<p class="login-input17" *ngIf="item[2] == 3"><a href="https://aulatix.com/uploads/activities/pdf/{{item[3]}}">{{item[1]}}</a></p>
+				</div>
+			</div>
+</ion-content>

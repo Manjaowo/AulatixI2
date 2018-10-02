@@ -24,8 +24,8 @@ export class MateriasPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
 	  this.semid = navParams.get("semid");
 	  this.semname = navParams.get("semname");
-	  console.log('id semes:'+ this.semid);
-	  console.log('name semes:'+ this.semname);
+	  //console.log('id semes:'+ this.semid);
+	  //console.log('name semes:'+ this.semname);
 	  this.userService.materias(this.semid).then((result) => {
 			this.mate = result;
 			for (let item in this.mate.semester_subject) {
@@ -40,9 +40,6 @@ export class MateriasPage {
     this.navCtrl.push(SubjectsinglePage, {
       mateid : num
     });
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MateriasPage');
   }
 
 }

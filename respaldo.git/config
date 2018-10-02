@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "ionic"]
+	url = git@git.ionicjs.com:manjarrezlg/aulatixi2.git
+	fetch = +refs/heads/*:refs/remotes/ionic/*
+[branch "master"]
+	remote = ionic
+	merge = refs/heads/master
+[remote "origin"]
+	url = git@git.ionicjs.com:manjarrezlg/aulatixi2.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

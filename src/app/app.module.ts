@@ -5,11 +5,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { File } from '@ionic-native/file';
-import { Transfer } from '@ionic-native/transfer';
+import { FileTransfer } from '@ionic-native/file-transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
-import { FileTransfer } from '@ionic-native/file-transfer';
 import { DocumentViewer } from '@ionic-native/document-viewer';
+import { FileOpener } from '@ionic-native/file-opener';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 import { MyApp } from './app.component';
@@ -29,6 +30,10 @@ import { SidebarComponent } from '../components/sidebar/sidebar';
 import { ContentindiPage } from '../pages/contentindi/contentindi';
 import { ActivityindiPage } from '../pages/activityindi/activityindi';
 import { PortafolioindiPage } from '../pages/portafolioindi/portafolioindi';
+import { PerfilpagePage } from '../pages/perfilpage/perfilpage';
+import { VincularPage } from '../pages/vincular/vincular';
+import { HomeworkPage } from '../pages/homework/homework';
+import { PortfoliohomeworkPage } from '../pages/portfoliohomework/portfoliohomework';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,11 @@ import { PortafolioindiPage } from '../pages/portafolioindi/portafolioindi';
 	PortfolioPage,
 	ContentindiPage,
 	ActivityindiPage,
-	PortafolioindiPage
+	PortafolioindiPage,
+	PerfilpagePage,
+	VincularPage,
+	HomeworkPage,
+	PortfoliohomeworkPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +80,11 @@ import { PortafolioindiPage } from '../pages/portafolioindi/portafolioindi';
 	PortfolioPage,
 	ContentindiPage,
 	ActivityindiPage,
-	PortafolioindiPage
+	PortafolioindiPage,
+	PerfilpagePage,
+	VincularPage,
+	HomeworkPage,
+	PortfoliohomeworkPage
   ],
   providers: [
     StatusBar,
@@ -79,11 +92,12 @@ import { PortafolioindiPage } from '../pages/portafolioindi/portafolioindi';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserService,
 	File,
-	Transfer,
 	FilePath,
 	Camera, 
     DocumentViewer,
-    FileTransfer
+    FileTransfer,
+	FileOpener,
+	InAppBrowser
   ]
 })
 export class AppModule {}

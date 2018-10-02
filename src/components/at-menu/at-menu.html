@@ -1,14 +1,41 @@
 <!-- Generated template for the AtMenuComponent component -->
-<div>
-	<div class="top-bar-logo-row">
-		<div id="BarraBtn" class="btn-top-bar" >
-			<div class="btn-top-bar-1"></div>
-			<div class="btn-top-bar-2"></div>
-			<div class="btn-top-bar-3"></div>
-		</div>
+<ion-header>
+	<ion-navbar #mycontent hideBackButton="true" class="top-bar-logo-row">		
+		<ion-buttons start>
+		</ion-buttons>
+		<img ion-button menuToggle="left" src="assets/imgs/menu.png" class="btn-top-bar">
 		<img src="assets/imgs/logo_top_bar.png" alt="aulatix logo" class="logo-top-bar"> 
-		<div id="PerfilBtn" class="per-top-bar" >
-			<img src="assets/imgs/perfil.png" alt="aulatix perfil" class=""> 
+		<div class="per-top-bar" >
+			<img src="assets/imgs/perfil.png" alt="aulatix perfil"  (click)="PerfilPage()" class=""> 
 		</div>
-	</div>
-</div>
+		<ion-buttons end>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-menu [content]="mycontent" persistent="true">
+	<ion-content class="list-back">
+		<ion-list class="list-back" >
+			<ion-item class="list-item-top" >
+				Aulatix ®
+			</ion-item>
+			<ion-item class="list-item2">
+				<ion-icon class="list-icon" name="home"></ion-icon>Inicio
+			</ion-item>
+			<ion-item class="list-item" (click)="PerfilPage()">
+				<ion-icon class="list-icon" name="contact"></ion-icon>Perfil
+			</ion-item>
+			<!--<ion-item class="list-item" (click)="SemesPage()">
+				<ion-icon class="list-icon" name="appstore"></ion-icon>Tienda
+			</ion-item>-->
+			<ion-item class="list-item">
+				<ion-icon class="list-icon" name="logo-facebook"></ion-icon><a href="https://www.facebook.com/aulatix/" >Facebook</a>
+			</ion-item >
+			<ion-item class="list-item">
+				<ion-icon class="list-icon" name="school"></ion-icon><a href="https://aulatix.com/" >www.Aulatix.com</a>
+			</ion-item>
+			<ion-item class="list-item-logout" (click)="LogoutPage()">
+				<ion-icon class="list-icon" name="log-out"></ion-icon>Cerrar sesión
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>

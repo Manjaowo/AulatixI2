@@ -40,6 +40,7 @@ export class PortafolioindiPage {
 		this.actid = navParams.get("portafolioid");
 		this.actname = navParams.get("portafolioname");
 		this.grupoid = navParams.get("grupoid");
+		//console.log("Abrio portafolio individdual");
 		this.userService.activities(this.grupoid).then((result) => {
 			this.mate = result;
 			for (let item in this.mate.activities) {
@@ -226,5 +227,3 @@ export class PortafolioindiPage {
   });
 }
 }
-
-

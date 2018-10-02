@@ -1,22 +1,77 @@
 at-menu {
+	.list-back{
+		background-color: #808080;
+	}
+	.list-item-top{
+		background-color: rgba(249, 249, 249, 0.8);
+		margin-left:3%;
+		margin-right:3%;
+		margin-top:6px;
+		margin-bottom:0px;
+		width:94%;
+		color: #4f4946;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	.list-icon{
+	margin-right:10px;
+	}
+	.list-item2{
+	background-color: #f9f9f9;
+		margin-left:3%;
+		margin-right:3%;
+		margin-top:0px;
+		margin-bottom:4px;
+		width:94%;
+		color: #4f4946;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.list-item{
+	background-color: #f9f9f9;
+		margin-left:3%;
+		margin-right:3%;
+		margin-top:2px;
+		margin-bottom:4px;
+		width:94%;
+		color: #4f4946;
+		border-radius: 10px;
+	}
+	.list-item-logout{
+	background-color: #b82030;
+		margin-left:3%;
+		margin-right:3%;
+		margin-top:150px;
+		margin-bottom:4px;
+		width:94%;
+		color: #fff;
+		border-radius: 10px;
+	}
 	.logo-top-bar{
-		width:60%;
+		width:72%;
 		height:auto;
 		margin-left:0%;
 		margin-right:0%;
-	margin-top:10px;
-	float:left;
+		margin-top:0px;
+		float:left;
+	}
+	.toolbar-background{
+		background-color: #fff !important;
 	}
 	.btn-top-bar{
-		width:12%;
-		height: 45px;
-		margin-left:3%;
+		width:14%;
+		height: 50px;
+		margin-left:1%;
 		margin-right:5%;
-		margin-top:23px;
-		margin-bottom:2px;
-		border-style: solid;
-		border-width: 4px;
-		border-color:#808080;
+		margin-top:10px;
+		margin-bottom:10px;
+		//border-style: solid;
+		//border-width: 4px;
+		//border-color:#808080;
 		float:left;
 		}
 	.btn-top-bar-1{
@@ -53,13 +108,13 @@ at-menu {
 		border-color:#808080;
 	}
 	.per-top-bar{
-		width:15%;
+		width:20%;
 		height: 50px;
-		margin-left:3%;
-		margin-right:2%;
-		margin-top:10px;
-		margin-bottom:0px;
-		float:left;
+		margin-left:0%;
+		margin-right:0%;
+		margin-top:5px;
+		margin-bottom:5px;
+		float:right;
 	}
 	.per-top-bar>img{
 		width:100%;

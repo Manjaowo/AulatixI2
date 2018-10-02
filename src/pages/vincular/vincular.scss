@@ -1,0 +1,119 @@
+page-vincular {
+	.title-mat-row{
+		background-color:#F9F9F9;
+		width:100%;
+		height: 55px;
+		margin-top:78px;
+	}
+	.login-input10{
+		background-color:#f9f9f9;
+		color:#808080 ;
+		width: 100%;
+		height:45px;
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+		/*padding:9px 25px !important;*/
+		/*padding: 0px 30px;*/
+	}
+
+	.login-input10>label{
+		width:33%;
+		text-align:center;
+		font-size:14px;
+		height:21px;
+		margin-top:12px ;
+		margin-bottom:12px ;
+		float:left;
+	}
+	.label-input{
+		height:45px;
+			margin-top:0px !important;
+		margin-bottom:0px !important;
+	}
+	.label-precio{
+		font-size:18px !important;
+		text-align:right !important;
+		height:25px;
+		margin-top:10px !important;
+		margin-bottom:10px !important;
+		padding-right:15px !important;
+	}
+	.Aulatix-input13{
+		padding: 0px 15px!important;
+		width:70%;
+		height:50px !important;
+		float:left;
+		font-size:14px !important;
+		background-color: #f9f9f9 !important;
+		border-width: 0px 0px 2px 0px !important;
+		border-color: #eeeeee !important; 
+	}
+	.registro-row{
+		background-color:#b71e30;
+		width:100%;
+		height: 55px;
+		padding-top:10px;
+		float:left;
+	}	
+	.registro-url{
+		margin-top:10px ;
+		font-size:20px;
+		width:44%;
+		margin-left:28%;
+		margin-right:28%;
+		margin-top:2px;
+		text-align:center;
+		margin-bottom:15px;
+		color:white !important;
+		float:left;
+	}
+	.Aulatix-input14{
+		background-color:#b71e30;
+		color:white !important;
+		width: 26%;
+		height:34px;
+		margin-left:2%;
+		margin-right:2%;
+		margin-top:8px;
+		margin-bottom:8px;
+		font-style: italic;
+		text-align:center;
+		font-size:16px;
+		float:left;
+		/*padding:9px 25px !important;*/	
+	}
+	.Aulatix-input15{
+		background-color:#b71e30;
+		color:white !important;
+		width: 30%;
+		height:34px;
+		margin-left:35%;
+		margin-right:35%;
+		margin-top:18px;
+		margin-bottom:8px;
+		font-style: italic;
+		text-align:center;
+		font-size:16px;
+		float:left;
+		/*padding:9px 25px !important;*/	
+	}
+	.Aulatix-select2{
+		padding: 0px 15px!important;
+		width:100%;
+		float:left;
+		height:50px !important;
+		font-size:14px !important;
+		border-width:0px !important;
+		background-color: #f9f9f9 !important;
+		border-width: 0px 0px 2px 0px !important;
+		border-color: #eeeeee !important; 		
+	}
+	.Aulatix-select2 > option[disabled] { 
+		color:#808080 !important;
+	} 
+	.invisi{
+		display: none;
+	}
+}

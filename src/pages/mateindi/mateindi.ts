@@ -4,6 +4,8 @@ import { UserService } from '../../providers/user-service/user-service';
 import { ContentPage } from '../content/content';
 import { ActivityPage } from '../activity/activity';
 import { PortfolioPage } from '../portfolio/portfolio';
+import { HomeworkPage } from '../homework/homework';
+import { PortfoliohomeworkPage } from '../portfoliohomework/portfoliohomework';
 /**
  * Generated class for the MateindiPage page.
  *
@@ -78,6 +80,20 @@ export class MateindiPage {
   clickPort(num, name) {
 	console.log('Portafolio Id:'+num+' name:'+name);
     this.navCtrl.push(PortfolioPage, {
+		groupid: num,
+		groupname: name
+	});
+  }
+  clickHomeWork(num, name) {
+	console.log('Tareas Id:'+num+' name:'+name);
+    this.navCtrl.push(HomeworkPage, {
+		groupid: num,
+		groupname: name
+	});
+  }
+  clickHomeWorkPort(num, name) {
+	console.log('Portafolio Tareas Id:'+num+' name:'+name);
+    this.navCtrl.push(PortfoliohomeworkPage, {
 		groupid: num,
 		groupname: name
 	});

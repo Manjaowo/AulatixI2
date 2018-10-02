@@ -1,0 +1,19 @@
+<!--
+  Generated template for the VincularPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<at-menu></at-menu>
+<ion-content>
+	<div class="title-mat-row">
+		<div class="registro-row"><p class="registro-url">{{sname}}</p></div>
+		<input [(ngModel)]="sprofecodigo" type="text" class="Aulatix-input13" placeholder="ID Profesor" >
+		<input (click)="verificar()" type="submit" class="Aulatix-input14" value="Buscar">
+		<select [(ngModel)]="sgrupos" class="Aulatix-select2">
+		  <option disabled selected hidden>Grupos</option>
+		  <option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</option>
+		</select>
+		<input (click)="vincular()" type="submit" class="Aulatix-input15" value="Vincular">		
+	</div> 
+</ion-content>

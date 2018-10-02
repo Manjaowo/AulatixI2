@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
 //import { ActivityindiPage } from '../activityindi/activityindi';
-import { File } from '@ionic-native/file';
-import { DocumentViewer } from '@ionic-native/document-viewer';
-import { DocumentViewerOptions } from '@ionic-native/document-viewer';
-import { FileTransfer } from '@ionic-native/file-transfer';
-import { AlertController } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 /**
  * Generated class for the ActivityPage page.
  *
@@ -29,9 +25,9 @@ export class ActivityPage {
 	cname = "";
 	matename = "";
 	finalurl = "";
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public document: DocumentViewer, public navParams: NavParams, public userService: UserService,  public file: File, public transfer: FileTransfer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService, private iab: InAppBrowser) {
 	  this.mateid = navParams.get("groupid");
-		console.log('+++id:'+ this.mateid);		
+		//console.log('+++id:'+ this.mateid);		
 		//this.matename = navParams.get("matename");	
 		this.userService.activities(this.mateid).then((result) => {
 			this.mate = result;
@@ -48,60 +44,35 @@ export class ActivityPage {
 		});
   }
 
-    activityindi(id, urli) {	
-	/*let alert = this.alertCtrl.create({
-							title: 'PDF',
-							message:'url: '+"https://aulatix.com/uploads/activities/pdf/" + urli,
-							buttons: ['Demiss']
-			  });
-			  alert.present();
-      console.log('Actividad Id:'+id+' url:https://aulatix.com/uploads/activities/pdf/'+urli);
-    let path = this.file.dataDirectory;
-  
-	const options: DocumentViewerOptions = {
-	  title: 'My PDF'
+	activityindi(id, urli) {
+		
+		let finurl = "https://aulatix.com/uploads/activities/pdf/" + urli;
+			const browser = this.iab.create("https://docs.google.com/viewer?url="+finurl);
+			//browser.executeScript(...);
+			//browser.insertCSS(...);
+			browser.on('loadstop').subscribe(event => {
+				console.log("Entro viewer");
+				//console.log(event);
+			   browser.insertCSS({ code: "body{color: red;" });
+			});
+
+			//browser.close();
+			
 	}
-    const transfer = this.transfer.create();
-    transfer.download("https://aulatix.com/uploads/activities/pdf/" + urli, path + urli).then(entry => {
-	  let url = entry.toURL();
-	  let alert = this.alertCtrl.create({
-							title: 'PDF',
-							message:'url: '+ url,
-							buttons: ['Demiss']
-	  });
-	  alert.present();
-      this.document.viewDocument(url, 'application/pdf', options);
-    });*/
-	/*this.navCtrl.push(ActivityindiPage, {
-		activityid: id,
-		activityurl: url
-	});*/
-    let path = null;
-	path = this.file.dataDirectory;
-    /*if (this.platform.is('ios')) {
-      path = this.file.documentsDirectory;
-    } else if (this.platform.is('android')) {
-      path = this.file.dataDirectory;
-    }*/
-	let alert2 = this.alertCtrl.create({
-							title: 'PDF',
-							message:'hola ',
-							buttons: ['Demiss']
-	  });
-	  alert2.present();
-    const transfer = this.transfer.create();
-    transfer.download("https://aulatix.com/uploads/activities/pdf/" + urli, path + urli).then(entry => {
-      let url = entry.toURL();
-	  console.log("let url:" + url);
-	  let alert = this.alertCtrl.create({
-							title: 'PDF',
-							message:'url: '+ url,
-							buttons: ['Demiss']
-	  });
-	  alert.present();
-      this.document.viewDocument(url, 'application/pdf', {});
-    });
-  
-  }
+	downloadindi(id, urli) {
+		
+		let finurl = "https://aulatix.com/uploads/activities/pdf/" + urli;
+			const browser = this.iab.create("https://docs.google.com/viewer?export=download&url="+finurl);
+			//browser.executeScript(...);
+			//browser.insertCSS(...);
+			browser.on('loadstop').subscribe(event => {
+				console.log("Entro download");
+				//console.log(event);
+			   browser.insertCSS({ code: "body{color: red;" });
+			});
+
+			//browser.close();
+			
+	}
 
 }

@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
 //import { ContentindiPage } from '../contentindi/contentindi';
-import { File } from '@ionic-native/file';
-import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
-import { FileTransfer } from '@ionic-native/file-transfer';
-
-import { AlertController } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 /**
  * Generated class for the ContentPage page.
  *
@@ -29,15 +25,15 @@ export class ContentPage {
 	cname = "";
 	matename = "";
 	finalurl = "";
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private document: DocumentViewer, public navParams: NavParams,  public userService: UserService, private file: File, private transfer: FileTransfer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public userService: UserService, private iab: InAppBrowser) {
 	    this.mateid = navParams.get("groupid");
-		console.log('+++id:'+ this.mateid);		
+		//console.log('+++id:'+ this.mateid);		
 		//this.matename = navParams.get("matename");	
 		this.userService.contents(this.mateid).then((result) => {
 			this.mate = result;
 			//console.log("[]" + this.mate.contents);
 			for (let item in this.mate.contents) {
-				console.log(this.mate.contents[item].url_pdf);
+				//console.log(this.mate.contents[item].url_pdf);
 				//console.log('name:'+ this.mate.contents[item].name);
 				//console.log('unidad:'+ this.mate.contents[item].unity_id);
 				this.arrayCosas[item] = [this.mate.contents[item].id, this.mate.contents[item].name, this.mate.contents[item].unity_id, this.mate.contents[item].url_pdf];		
@@ -48,26 +44,18 @@ export class ContentPage {
 		});
   }
   contentindi(id, urli) {
-	console.log('Contenido Id:'+id+' url:'+urli);
-	
-	let path = this.file.dataDirectory;
-  
-	this.finalurl = "https://aulatix.com/uploads/contents/pdf/" + urli;
-	  const options: DocumentViewerOptions = {
-	  title: 'My PDF'
-	}
-    const transfer = this.transfer.create();
-    transfer.download(this.finalurl, path + urli).then(entry => {
-      let alert = this.alertCtrl.create({
-							title: 'pdf',
-							message: 'Contenido Id:'+id+' url:'+urli,
-							buttons: ['Ok']
-			  });
-			  alert.present();
-	  let url = entry.toURL();
-      this.document.viewDocument(url, 'application/pdf', options);
-    });
- 
+		let finurl =  "https://aulatix.com/uploads/contents/pdf/" + urli;
+			const browser = this.iab.create("https://docs.google.com/viewer?url="+finurl);
+			//browser.executeScript(...);
+			//browser.insertCSS(...);
+			browser.on('loadstop').subscribe(event => {
+				//console.log("Entro");
+				//console.log(event);
+			   browser.insertCSS({ code: "body{color: red;" });
+			});
+
+			//browser.close();
+		
     /*this.navCtrl.push(ContentindiPage, {
 		contentid: id,
 		contenturl: url

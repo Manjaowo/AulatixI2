@@ -4,48 +4,38 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 	<at-menu></at-menu>
-</ion-header>
-
-
 <ion-content >
 	<div class="body-login">
 			<div class="registro-row">
 				<p class="registro-url">Registro</p>
 			</div> 
 			<div class="dashboard-row">
-				<input type="text" class="Aulatix-input" placeholder="Nombre" >
-				<input type="text" class="Aulatix-input" placeholder="Apellido" >
-				<input type="text" class="Aulatix-input" placeholder="Correo Electronico" >
-				<input type="text" class="Aulatix-input" placeholder="Contraseña" >
-				<input type="text" class="Aulatix-input" placeholder="Confirmación Contraseña" >
-				<select class="Aulatix-select">
+				<input [(ngModel)]="registerdata.name" type="text" class="Aulatix-input" placeholder="Nombre" >
+				<input [(ngModel)]="registerdata.lastname" type="text" class="Aulatix-input" placeholder="Apellido" >
+				<input [(ngModel)]="registerdata.email" type="text" class="Aulatix-input" placeholder="Correo Electronico" >
+				<input [(ngModel)]="registerdata.password" type="password" class="Aulatix-input" placeholder="Contraseña" >
+				<input [(ngModel)]="registerdata.password_confirmation" type="password" class="Aulatix-input" placeholder="Confirmación Contraseña" >
+				<select [(ngModel)]="registerdata.state_id" class="Aulatix-select " (click)="ciuPage()">
 				  <option disabled selected hidden>Estado</option>
-				  <option>Chihuahua</option>
-				  <option>Durango</option>
-				  <option>Monterrey</option>
-				  <option>Veracruz</option>
+				  <option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</option>
 				</select>
-				<input type="text" class="Aulatix-input" (click)="ciuPage()" placeholder="Ciudad">
-				<select class="Aulatix-select">
+				<select [(ngModel)]="registerdata.city_id" class="Aulatix-select" (click)="escuelaPage()">
+				  <option disabled selected hidden>Ciudad</option>
+				  <option *ngFor="let item of arrayCosas2" value="{{item[0]}}">{{item[1]}}</option>
+				</select>
+				<select [(ngModel)]="registerdata.subsystem_id" class="Aulatix-select" (click)="subsisPage()">
 				  <option disabled selected hidden>Subsistema</option>
-				  <option>General</option>
-				  <option>Técnico</option>
+				  <option value="1" >General</option>
+				  <option value="2" >Técnico</option>
 				</select>
-				<input type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" >
-				<input type="text" class="Aulatix-input" style="display:none;" placeholder="Matricula" >
-				<select class="Aulatix-select">
+				<select [(ngModel)]="registerdata.school1_id" class="Aulatix-select">
 				  <option disabled selected hidden>Escuela</option>
-				  <option>Conalep Chihuahua 1</option>
-				  <option>Bachilleres 4</option>
-				  <option>CBTis 122</option>
-				  <option>CBTa 144</option>
+				  <option *ngFor="let item of arrayCosas3" value="{{item[0]}}">{{item[1]}}</option>
 				</select>
-				<input type="text" class="Aulatix-input" placeholder="Clave del alumno" >
-				<img src="assets/imgs/foto-perfil.png" alt="aulatix foto" style="display:none;" class="Aulatix-foto"> 
-				<input type="text" style="display:none;" class="Aulatix-input" placeholder="Fotografia" >
-				<input id="Registrarse" type="submit" class="login-input5" value="Registrarse">	
+				<input [(ngModel)]="registerdata.student_ucode" type="text" class="Aulatix-input" placeholder="Clave del alumno" >
+				<input [(ngModel)]="registerdata.birthdate" type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" >
+				<input (click)="Registrar()" type="submit" class="login-input5" value="Registrarse">	
 			</div>
 		</div>
 </ion-content>

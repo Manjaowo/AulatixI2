@@ -1,4 +1,17 @@
 page-register {
+.btn-top-bar{
+//visibility:hidden !important;
+display:none !important;
+}
+.per-top-bar{
+//visibility:hidden !important;
+display:none !important;
+}
+.logo-top-bar{
+margin-left:19% !important;
+margin-right:19% !important;
+width:62%;
+}
 .top-bar-logo-row{
 	background-color:#fff;
 	width:100%;	
@@ -11,7 +24,7 @@ page-register {
 	height: 55px;
 	padding-top:10px;
 	float:left;
-	margin-top: 16px;
+	margin-top:78px;
 }
 .registro-url{
 	margin-top:10px ;
@@ -26,17 +39,27 @@ page-register {
 	float:left;
 }
 .Aulatix-input{
-	padding: 18px 15px!important;
+	//padding: 18px 15px !important;
+	padding: 0px 15px !important;	
 	width:100%;
 	height:50px !important;
 	font-size:14px !important;
+	background-color: #f9f9f9 !important;
+	border-width: 0px 0px 2px 0px !important;
+	border-color: #eeeeee !important; 
 }
+
 .Aulatix-select{
-	padding: 14px 15px!important;
+	//padding: 14px 15px !important;
+	padding: 0px 15px !important;
 	width:100%;
 	height:50px !important;
 	font-size:14px !important;
 	border-width:0px !important;
+	color:#808080 !important;
+	background-color: #f9f9f9 !important;
+	border-width: 0px 0px 2px 0px !important;
+	border-color: #eeeeee !important; 
 }
 .Aulatix-select > option[disabled] { 
 	color:#808080 !important;

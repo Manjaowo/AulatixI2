@@ -1,4 +1,15 @@
 <!-- Generated template for the SidebarComponent component -->
 <div>
-  {{text}}
+    <ion-menu [content]="mycontent">
+		<ion-content>
+			<ion-list>
+			  <p>Perfil</p>
+			  <p>some menu content, could be list items</p>
+			  <p>some menu content, could be list items</p>
+			  <p>some menu content, could be list items</p>
+			  <p>some menu content, could be list items</p>
+			</ion-list>
+		</ion-content>
+	</ion-menu>
+	<ion-nav #mycontent [root]="rootPage"></ion-nav>
 </div>

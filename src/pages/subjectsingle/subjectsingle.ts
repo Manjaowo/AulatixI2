@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
+import { VincularPage } from '../vincular/vincular';
 /**
  * Generated class for the SubjectsinglePage page.
  *
@@ -43,7 +44,10 @@ export class SubjectsinglePage {
 			console.error(err);
 		});	
 	}
-	ionViewDidLoad() {
-		console.log('ionViewDidLoad SubjectsinglePage');
+	vincular(){
+		this.navCtrl.push(VincularPage, {
+		  mateid : this.sid,
+		  matename : this.sname
+		});
 	}
 }
