@@ -11,7 +11,17 @@
 		<!--<p type="submit" class="login-input10"><label class="label-input"></label><label>QUIMICA 1</label></p>-->
 		<p type="submit" class="login-input15"><label>Portafolio</label></p>
 		<p type="submit" style="background-color: white !important;" class="login-input10"><label class="label-input"></label><label>{{actname}}</label></p>
-		<p type="submit" style="background-color: #f9f9f9 !important;" ><img src="assets/imgs/foto-evidencia.png" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto"></p>
+		<div *ngIf="!base64Image">
+				<p type="submit" style="background-color: #f9f9f9 !important;" >
+						<img src="assets/imgs/foto-evidencia.png" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto">
+			</p>
+		</div>
+		<div *ngIf="!base64Image">
+				<p type="submit" style="background-color: #f9f9f9 !important;" >
+						<img src="{{base64Image}}" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto">
+			</p>
+				
+		</div>
 		<input type="text" style="display:none;" class="Aulatix-input" placeholder="Fotografia" value="{{lastImage}}">
 		<input id="Envi" type="submit" class="login-input5" (click)="uploadImage2()"value="Enviar">	
 	</div> 

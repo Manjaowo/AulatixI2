@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
 import { PortafolioindiPage } from '../portafolioindi/portafolioindi';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 /**
  * Generated class for the PortfolioPage page.
  *
@@ -23,7 +24,7 @@ export class PortfolioPage {
 	cid = "";
 	cname = "";
 	matename = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
 	  this.mateid = navParams.get("groupid");
 		console.log('+++id:'+ this.mateid);		
 		//this.matename = navParams.get("matename");	
@@ -36,7 +37,12 @@ export class PortfolioPage {
 				//console.log('unidad:'+ this.mate.contents[item].unity_id);
 				this.arrayCosas[item] = [this.mate.activities[item].id, this.mate.activities[item].name, this.mate.activities[item].unity_id, this.mate.activities[item].url_pdf];		
 				
-			}	
+			}
+			
+
+			
+
+			
 		}, (err) => {
 			console.error(err);
 		});
@@ -50,6 +56,7 @@ export class PortfolioPage {
 		portafoliourl: url,
 		grupoid: this.mateid
 	});
+	
   }
 
 }

@@ -4,9 +4,9 @@ import { UserService } from '../../providers/user-service/user-service';
 import { AlertController } from 'ionic-angular';
 
 import { File } from '@ionic-native/file';
-import { Transfer, TransferObject } from '@ionic-native/transfer';
+//import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
-import { Camera } from '@ionic-native/camera';
+import { Camera ,CameraOptions } from '@ionic-native/camera';
 
 /**
  * Generated class for the PortafolioindiPage page.
@@ -36,7 +36,9 @@ export class PortafolioindiPage {
 	activity_id2 = "";
 	group_id2 = "";
 	unity_id2 = "";		
-	constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public userService: UserService, private camera: Camera, private transfer: Transfer, private file: File, private filePath: FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController) {
+	test = "";
+	base64Image = "";
+	constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public userService: UserService, private camera: Camera, /*private transfer: Transfer,*/ private file: File, private filePath: FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController) {
 		this.actid = navParams.get("portafolioid");
 		this.actname = navParams.get("portafolioname");
 		this.grupoid = navParams.get("grupoid");
@@ -76,7 +78,23 @@ export class PortafolioindiPage {
 		{
 		  text: 'Usar camara',
 		  handler: () => {
-			this.takePicture(this.camera.PictureSourceType.CAMERA);
+				const options: CameraOptions = {
+					quality: 100,
+					destinationType: this.camera.DestinationType.NATIVE_URI,
+					encodingType: this.camera.EncodingType.JPEG,
+					mediaType: this.camera.MediaType.PICTURE
+				}			
+
+				this.camera.getPicture(options).then((imageData) => {
+					// imageData is either a base64 encoded string or a file URI
+					// If it's base64 (DATA_URL):
+				//	this.base64Image = 'data:image/jpeg;base64,' + imageData;
+				alert(imageData);
+				this.base64Image = imageData;
+				 }, (err) => {
+					// Handle error
+				 });
+			//this.takePicture(this.camera.PictureSourceType.CAMERA);
 		  }
 		},
 		{
@@ -95,7 +113,6 @@ export class PortafolioindiPage {
 		saveToPhotoAlbum: false,
 		correctOrientation: true
 	  };
-	 
 	  // Get the data of an image
 	  this.camera.getPicture(options).then((imagePath) => {
 		// Special handling for Android library
@@ -116,6 +133,7 @@ export class PortafolioindiPage {
 		this.presentToast('Error while selecting image.');
 	  });
 	}
+
 	private createFileName() {
 	  var d = new Date(),
 	  n = d.getTime(),
@@ -150,7 +168,8 @@ export class PortafolioindiPage {
 	  }
 	}
 	public uploadImage2() {
-	var portfolio = { 	user_id: this.user_id2,  
+	var portfolio = { 	
+						user_id: this.user_id2,  
 						image:  this.lastImage,
 						activity_id: this.activity_id2,
 						group_id: this.group_id2,
@@ -210,7 +229,7 @@ export class PortafolioindiPage {
     params : {'fileName': filename}
   };
  
-  const fileTransfer: TransferObject = this.transfer.create();
+  //const fileTransfer: TransferObject = this.transfer.create();
  
   this.loading = this.loadingCtrl.create({
     content: 'Uploading...',
@@ -218,12 +237,12 @@ export class PortafolioindiPage {
   this.loading.present();
  
   // Use the FileTransfer to upload the image
-  fileTransfer.upload(targetPath, url, options).then(data => {
+  /*fileTransfer.upload(targetPath, url, options).then(data => {
     this.loading.dismissAll()
     this.presentToast('Image succesful uploaded.');
   }, err => {
     this.loading.dismissAll()
     this.presentToast('Error while uploading file.');
-  });
+  });*/
 }
 }
