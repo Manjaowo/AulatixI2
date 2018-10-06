@@ -16,13 +16,14 @@
 						<img src="assets/imgs/foto-evidencia.png" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto">
 			</p>
 		</div>
-		<div *ngIf="!base64Image">
+		<div *ngIf="base64Image">
 				<p type="submit" style="background-color: #f9f9f9 !important;" >
-						<img src="{{base64Image}}" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto">
+						
+						<img [src]="base64Image" (click)="presentActionSheet()" alt="aulatix foto" class="Aulatix-foto">
 			</p>
 				
 		</div>
 		<input type="text" style="display:none;" class="Aulatix-input" placeholder="Fotografia" value="{{lastImage}}">
-		<input id="Envi" type="submit" class="login-input5" (click)="uploadImage2()"value="Enviar">	
+		<input *ngIf="base64Image" id="Envi" type="submit" class="login-input5" (click)="uploadImage2()"value="Enviar">	
 	</div> 
 </ion-content>

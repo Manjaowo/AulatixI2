@@ -80,7 +80,7 @@ export class PortafolioindiPage {
 		  handler: () => {
 				const options: CameraOptions = {
 					quality: 100,
-					destinationType: this.camera.DestinationType.NATIVE_URI,
+					destinationType: this.camera.DestinationType.DATA_URL,
 					encodingType: this.camera.EncodingType.JPEG,
 					mediaType: this.camera.MediaType.PICTURE
 				}			
@@ -89,8 +89,7 @@ export class PortafolioindiPage {
 					// imageData is either a base64 encoded string or a file URI
 					// If it's base64 (DATA_URL):
 				//	this.base64Image = 'data:image/jpeg;base64,' + imageData;
-				alert(imageData);
-				this.base64Image = imageData;
+				this.base64Image = "data:image/jpeg;base64," + imageData;
 				 }, (err) => {
 					// Handle error
 				 });
@@ -122,7 +121,7 @@ export class PortafolioindiPage {
 			  let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
 			  let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
 			  this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-			  
+			  this.base64Image = "data:image/jpeg;base64," + imagePath;
 			});
 		} else {
 		  var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
@@ -168,22 +167,19 @@ export class PortafolioindiPage {
 	  }
 	}
 	public uploadImage2() {
+		alert("user id:" + this.user_id2 + " imagen : " + this.base64Image + " Activity id:" + this.activity_id2 + " group id:"+this.group_id2 + " Unit:"+this.unity_id2	);
 	var portfolio = { 	
 						user_id: this.user_id2,  
-						image:  this.lastImage,
+						image:  this.base64Image,
 						activity_id: this.activity_id2,
 						group_id: this.group_id2,
 						unity_id: this.unity_id2			
 					};
-					console.log("user_id2: " + this.user_id2);
-					console.log("image2: " + this.lastImage);
-					console.log("activity_id2: " + this.activity_id2);
-					console.log("group_id2: " + this.group_id2);
-					console.log("unity_id2: " + this.unity_id2);
+
 					this.userService.portfolioupload(portfolio).then((result) => {
 						console.log(result);
 						let alert = this.alertCtrl.create({
-							title: 'ERROR',
+							title: 'Captura Correcta',
 							message: "Exito" + result +
 							" user_id2: " + this.user_id2+
 							" image2: " + this.lastImage+
