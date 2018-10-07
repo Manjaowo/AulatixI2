@@ -116,13 +116,7 @@ export class PortafolioindiPage {
 	  this.camera.getPicture(options).then((imagePath) => {
 		// Special handling for Android library
 		if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-		  this.filePath.resolveNativePath(imagePath)
-			.then(filePath => {
-			  let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
-			  let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-			  this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-			  this.base64Image = "data:image/jpeg;base64," + imagePath;
-			});
+			this.base64Image = "data:image/jpeg;base64," + this.camera.PictureSourceType.PHOTOLIBRARY;
 		} else {
 		  var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
 		  var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
@@ -166,8 +160,8 @@ export class PortafolioindiPage {
 		return cordova.file.dataDirectory + img;
 	  }
 	}
+	
 	public uploadImage2() {
-		alert("user id:" + this.user_id2 + " imagen : " + this.base64Image + " Activity id:" + this.activity_id2 + " group id:"+this.group_id2 + " Unit:"+this.unity_id2	);
 	var portfolio = { 	
 						user_id: this.user_id2,  
 						image:  this.base64Image,
@@ -180,12 +174,7 @@ export class PortafolioindiPage {
 						console.log(result);
 						let alert = this.alertCtrl.create({
 							title: 'Captura Correcta',
-							message: "Exito" + result +
-							" user_id2: " + this.user_id2+
-							" image2: " + this.lastImage+
-							" activity_id2: " + this.activity_id2+
-							" group_id2: " + this.group_id2+
-							" unity_id2: " + this.unity_id2
+							message: "Exito" + result 
 							,
 							buttons: ['Ok']
 					  });
@@ -194,12 +183,7 @@ export class PortafolioindiPage {
 						console.error(err);
 							let alert = this.alertCtrl.create({
 							title: 'ERROR',
-							message: err + 
-							" user_id2: " + this.user_id2+
-							" image2: " + this.lastImage+
-							" activity_id2: " + this.activity_id2+
-							" group_id2: " + this.group_id2+
-							" unity_id2: " + this.unity_id2
+							message: err.message 
 							,
 							buttons: ['Dismiss']
 					  });
