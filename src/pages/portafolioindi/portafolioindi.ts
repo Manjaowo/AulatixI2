@@ -110,13 +110,16 @@ export class PortafolioindiPage {
 		quality: 100,
 		sourceType: sourceType,
 		saveToPhotoAlbum: false,
-		correctOrientation: true
+		correctOrientation: true,
+		destinationType: this.camera.DestinationType.DATA_URL,
+		encodingType: this.camera.EncodingType.JPEG,
+		mediaType: this.camera.MediaType.PICTURE
 	  };
 	  // Get the data of an image
 	  this.camera.getPicture(options).then((imagePath) => {
 		// Special handling for Android library
 		if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-			this.base64Image = "data:image/jpeg;base64," + this.camera.PictureSourceType.PHOTOLIBRARY;
+			this.base64Image = "data:image/jpeg;base64," + imagePath;
 		} else {
 		  var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
 		  var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
@@ -162,9 +165,10 @@ export class PortafolioindiPage {
 	}
 	
 	public uploadImage2() {
+
 	var portfolio = { 	
 						user_id: this.user_id2,  
-						image:  this.base64Image,
+						image: this.base64Image,
 						activity_id: this.activity_id2,
 						group_id: this.group_id2,
 						unity_id: this.unity_id2			
