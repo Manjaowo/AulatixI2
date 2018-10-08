@@ -12,9 +12,9 @@
 				<h2 class="dash-title espacio1" >MATERIAS</h2>
 				<h2 class="dash-title">{{semname}}</h2>		
 				<div *ngFor="let item of arrayCosas; index as i; first as isFirst">
-					<p type="submit" (click)="clickeando(i+1, item[0])" class="login-input10 login-input-espacio" *ngIf=" i%2 == 0 && isFirst == true"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
-					<p type="submit" (click)="clickeando(i+1, item[0])" class="login-input10" *ngIf=" i%2 == 0 && isFirst == false"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
-					<p type="submit" (click)="clickeando(i+1, item[0])" class="login-input9" *ngIf=" i%2 == 1"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
+					<p type="submit" (click)="clickeando(item[2])" class="login-input10 login-input-espacio" *ngIf=" i%2 == 0 && isFirst == true"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
+					<p type="submit" (click)="clickeando(item[2])" class="login-input10" *ngIf=" i%2 == 0 && isFirst == false"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
+					<p type="submit" (click)="clickeando(item[2])" class="login-input9" *ngIf=" i%2 == 1"><label class="label-input"><input type="checkbox"></label><label>{{item[0]}}</label><label style="visibility: hidden;" class="label-precio">{{item[1]}}</label></p>
 				</div>
 			</div>
 </ion-content>

@@ -7,7 +7,7 @@
   <at-menu></at-menu>
 <ion-content >
 	<div class="dashboard5-row" >
-	    <div *ngFor="let item of arrayCosas; index as i; first as isFirst; last as isLast">
+		<div *ngFor="let item of arrayCosas; index as i; first as isFirst; last as isLast">
 			<input  type="submit" *ngIf=" i%2 == 0 && isFirst == true" (click)="mateindi(item[0], item[1])" class="login-input62 login-input-espacio" value={{item[1]}}>
 			<input  type="submit" *ngIf=" i%2 == 0 && isFirst == false" (click)="mateindi(item[0], item[1])" class="login-input62 " value={{item[1]}}>
 			<input  type="submit" *ngIf=" i%2 == 1" class="login-input61" (click)="mateindi(item[0], item[1])" value={{item[1]}}>

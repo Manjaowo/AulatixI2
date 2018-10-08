@@ -20,6 +20,7 @@ export class SubjectsinglePage {
     newItem: any;
 	arrayCosas = [];
 	mateid = 0;
+	semeid = 0;
 	matename = "";
 	sid = "";
 	sname = "";
@@ -28,16 +29,22 @@ export class SubjectsinglePage {
 	simage = "";
 	constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
 		this.mateid = navParams.get("mateid");
-		console.log('id mate:'+ this.mateid);
-		this.userService.subject().then((result) => {
+		console.log('**********id mate:'+ this.mateid);
+		this.semeid = navParams.get("semeid");
+		console.log('***************id seme:'+ this.semeid);
+		this.userService.materias(this.semeid).then((result) => {
 			this.mate = result;
-			for (let item in this.mate) {
-				if(this.mate[item].id == this.mateid){
-					this.sid = this.mate[item].id;
-					this.sname = this.mate[item].name_general;
-					this.sdes = this.mate[item].description;
-					this.sprice = '$'+this.mate[item].price;
-					this.simage = "https://aulatix.com/images/" + this.mate[item].image;
+			console.log('***************mate all:');
+			console.log(this.mate.semester_subject);
+			for (let item in this.mate.semester_subject) {
+				console.log("******semes subjt id" + this.mate.semester_subject[item].id);
+				console.log("******mate id id" + this.mateid);
+				if(this.mate.semester_subject[item].id == this.mateid){
+					this.sid = this.mate.semester_subject[item].id;
+					this.sname = this.mate.semester_subject[item].name_general;
+					this.sdes = this.mate.semester_subject[item].description;
+					this.sprice = '$'+this.mate.semester_subject[item].price;
+					this.simage = "https://aulatix.com/images/" + this.mate.semester_subject[item].image;
 				}		
 			}	
 		}, (err) => {

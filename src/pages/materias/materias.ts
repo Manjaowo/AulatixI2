@@ -29,16 +29,19 @@ export class MateriasPage {
 	  this.userService.materias(this.semid).then((result) => {
 			this.mate = result;
 			for (let item in this.mate.semester_subject) {
-					this.arrayCosas[item] = [this.mate.semester_subject[item].name_general, "$" + this.mate.semester_subject[item].price];		
+					this.arrayCosas[item] = [this.mate.semester_subject[item].name_general, "$" + this.mate.semester_subject[item].price, this.mate.semester_subject[item].id];	
+					console.log('name:'+ this.mate.semester_subject[item].name_general);
+					console.log('$:'+  this.mate.semester_subject[item].price);
+					console.log('id:'+  this.mate.semester_subject[item].id);
 			}
-			
 		}, (err) => {
 			console.error(err);
 		});	
   }
   clickeando(num) {
     this.navCtrl.push(SubjectsinglePage, {
-      mateid : num
+      mateid : num,
+	  semeid : this.semid
     });
   }
 
