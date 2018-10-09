@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
+import { MenuController } from 'ionic-angular';
 
 /**
  * Generated class for the PerfilpagePage page.
@@ -46,7 +47,8 @@ export class PerfilpagePage {
 				teacher_ucode:null,
 				updated_at:null		
 				};	
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public userService: UserService) {
+  constructor(public menu:MenuController , public navCtrl: NavController, public navParams: NavParams,  public userService: UserService) {
+	this.menu.enable(true);
 	  this.userService.profileget().then((result) => {
 			this.data = result;
 			console.log("************perfil*******************");

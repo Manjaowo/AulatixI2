@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
 import { MateindiPage } from '../mateindi/mateindi';
 import { SemestersPage } from '../semesters/semesters';
+import { MenuController } from 'ionic-angular';
 /**
  * Generated class for the HomePage page.
  *
@@ -26,7 +27,8 @@ export class HomePage {
 	time: any;
 	mysubid = [];
 	subs = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
+  constructor(public menu:MenuController , public navCtrl: NavController, public navParams: NavParams, public userService: UserService) {
+		this.menu.enable(true);
 		this.userService.mygroup().then((result) => {
 			this.mysub = result;
 			//console.log("[]" + this.mysub.groups);

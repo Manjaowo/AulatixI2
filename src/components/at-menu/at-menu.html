@@ -3,7 +3,7 @@
 	<ion-navbar #mycontent hideBackButton="true" class="top-bar-logo-row">		
 		<ion-buttons start>
 		</ion-buttons>
-		<img ion-button menuToggle="left" src="assets/imgs/menu.png" class="btn-top-bar">
+		<img (click)="show_sidebarLeft()"  id="btn_sidebar" src="assets/imgs/menu.png" >
 		<img src="assets/imgs/logo_top_bar.png" alt="aulatix logo" class="logo-top-bar"> 
 		<div class="per-top-bar" >
 			<img src="assets/imgs/perfil.png" alt="aulatix perfil"  (click)="PerfilPage()" class=""> 
@@ -12,7 +12,8 @@
 		</ion-buttons>
 	</ion-navbar>
 </ion-header>
-<ion-menu [content]="mycontent" persistent="true">
+<div *ngIf="show_sidebar" (click)="hide()"  id="back_sidebar"></div>
+<ion-menu *ngIf="show_sidebar" [content]="mycontent" persistent="true">
 	<ion-content class="list-back">
 		<ion-list class="list-back" >
 			<ion-item class="list-item-top" >

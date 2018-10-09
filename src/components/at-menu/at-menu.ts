@@ -17,6 +17,8 @@ import { PerfilpagePage } from '../../pages/perfilpage/perfilpage';
 })
 
 export class AtMenuComponent {
+  show_sidebar = false;
+  hideSidebar = false;
   constructor(public navCtrl: NavController) {
 		console.log("AT-MENU entro");
 	
@@ -36,5 +38,16 @@ export class AtMenuComponent {
   }
   PerfilPage(){
 	this.navCtrl.push(PerfilpagePage);
+  }
+
+  public hide(){
+    this.hideSidebar = true;
+    this.show_sidebar = false;
+  }
+
+  public show_sidebarLeft(){
+    //nav_izquierda
+    this.hideSidebar = false;
+    this.show_sidebar = true;
   }
 }
