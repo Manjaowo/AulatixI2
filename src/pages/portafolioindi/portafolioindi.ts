@@ -79,7 +79,7 @@ export class PortafolioindiPage {
 		  text: 'Usar camara',
 		  handler: () => {
 				const options: CameraOptions = {
-					quality: 100,
+					quality: 50,
 					destinationType: this.camera.DestinationType.DATA_URL,
 					encodingType: this.camera.EncodingType.JPEG,
 					mediaType: this.camera.MediaType.PICTURE
@@ -107,7 +107,7 @@ export class PortafolioindiPage {
 	public takePicture(sourceType) {
 	  // Create options for the Camera Dialog
 	  var options = {
-		quality: 100,
+		quality: 50,
 		sourceType: sourceType,
 		saveToPhotoAlbum: false,
 		correctOrientation: true,
@@ -165,7 +165,6 @@ export class PortafolioindiPage {
 	}
 	
 	public uploadImage2() {
-
 	var portfolio = { 	
 						user_id: this.user_id2,  
 						image: this.base64Image,
