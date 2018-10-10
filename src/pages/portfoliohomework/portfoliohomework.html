@@ -11,15 +11,15 @@
 				<p type="submit" class="login-input15"><label>Portafolio Tareas</label></p>
 				<p type="submit" class="login-input16"><label>Unidad I</label></p>
 				<div *ngFor="let item of arrayCosas">
-					<p class="login-input17" (click)="activityindi(item[0], item[1], item[3])" *ngIf="item[2] == 1"><label>{{item[1]}}</label></p>
+					<p class="login-input17" (click)="activityindi(item[0], item[1])" *ngIf="item[2] == 1"><label>{{item[1]}}</label></p>
 				</div>
 				<p type="submit" class="login-input16"><label>Unidad II</label></p>
 				<div *ngFor="let item of arrayCosas">
-					<p class="login-input17" (click)="activityindi(item[0], item[1], item[3])" *ngIf="item[2] == 2"><label>{{item[1]}}</label></p>
+					<p class="login-input17" (click)="activityindi(item[0], item[1])" *ngIf="item[2] == 2"><label>{{item[1]}}</label></p>
 				</div>
 				<p type="submit" class="login-input16"><label>Unidad III</label></p>
 				<div *ngFor="let item of arrayCosas">
-					<p class="login-input17" (click)="activityindi(item[0], item[1], item[3])" *ngIf="item[2] == 3"><label>{{item[1]}}</label></p>
+					<p class="login-input17" (click)="activityindi(item[0], item[1])" *ngIf="item[2] == 3"><label>{{item[1]}}</label></p>
 				</div>
 			</div>
 </ion-content>

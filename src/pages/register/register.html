@@ -16,7 +16,8 @@
 				<input [(ngModel)]="registerdata.email" type="text" class="Aulatix-input" placeholder="Correo Electronico" >
 				<input [(ngModel)]="registerdata.password" type="password" class="Aulatix-input" placeholder="Contraseña" >
 				<input [(ngModel)]="registerdata.password_confirmation" type="password" class="Aulatix-input" placeholder="Confirmación Contraseña" >
-				<select [(ngModel)]="registerdata.state_id" class="Aulatix-select " (click)="ciuPage()">
+				<!-- (click)="ciuPage()"-->
+				<select [(ngModel)]="registerdata.state_id" class="Aulatix-select "  (click)="ciuPage()">
 				  <option disabled selected hidden>Estado</option>
 				  <option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</option>
 				</select>
