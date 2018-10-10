@@ -34,6 +34,7 @@ import { PerfilpagePage } from '../pages/perfilpage/perfilpage';
 import { VincularPage } from '../pages/vincular/vincular';
 import { HomeworkPage } from '../pages/homework/homework';
 import { PortfoliohomeworkPage } from '../pages/portfoliohomework/portfoliohomework';
+import { PortafoliotareaindiPage } from '../pages/portafoliotareaindi/portafoliotareaindi';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PortfoliohomeworkPage } from '../pages/portfoliohomework/portfoliohomew
 	PerfilpagePage,
 	VincularPage,
 	HomeworkPage,
-	PortfoliohomeworkPage
+	PortfoliohomeworkPage,
+	PortafoliotareaindiPage 
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,8 @@ import { PortfoliohomeworkPage } from '../pages/portfoliohomework/portfoliohomew
 	PerfilpagePage,
 	VincularPage,
 	HomeworkPage,
-	PortfoliohomeworkPage
+	PortfoliohomeworkPage,
+	PortafoliotareaindiPage 
   ],
   providers: [
     StatusBar,

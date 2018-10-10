@@ -45,6 +45,16 @@ export class UserService {
 			  });
 		});
 	}
+	porthomeworkupload(portfolio) {
+		return new Promise((resolve, reject) => {
+			this.http.post(apiUrl+'portfolio/picture', portfolio, {headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token'),'Access-Control-Allow-Origin': 'https://www.aulatix.com' }})
+			  .subscribe(res => {
+				resolve(res)
+			  }, (err) => {
+				reject(err);
+			  });
+		});
+	}
 	estados() {
 		return new Promise((resolve, reject) => {
 			this.http.get(apiUrl+'state', {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://www.aulatix.com'}})
@@ -141,6 +151,17 @@ export class UserService {
 		 console.log(apiUrl+'group/'+num+'/activities');
 		return new Promise((resolve, reject) => {
 			this.http.get(apiUrl+'group/'+num+'/activities', {headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
+			.subscribe(res => {
+				resolve(res);
+			  }, (err) => {
+				reject(err);
+			  });
+		});
+	}
+	homeworks(num) {
+		 console.log(apiUrl+'group/'+num+'/homeworks');
+		return new Promise((resolve, reject) => {
+			this.http.get(apiUrl+'group/'+num+'/homeworks', {headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
 			.subscribe(res => {
 				resolve(res);
 			  }, (err) => {

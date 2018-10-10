@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { UserService } from '../../providers/user-service/user-service';
-import { PortafolioindiPage } from '../portafolioindi/portafolioindi';
+import { PortafoliotareaindiPage } from '../portafoliotareaindi/portafoliotareaindi';
 /**
  * Generated class for the PortfoliohomeworkPage page.
  *
@@ -28,14 +28,14 @@ mate : any;
 	  this.mateid = navParams.get("groupid");
 		console.log('+++id:'+ this.mateid);		
 		//this.matename = navParams.get("matename");	
-		this.userService.activities(this.mateid).then((result) => {
+		this.userService.homeworks(this.mateid).then((result) => {
 			this.mate = result;
 			//console.log("[]" + this.mate.activities);
-			for (let item in this.mate.activities) {
+			for (let item in this.mate.homeworks) {
 				//console.log('id:'+ this.mate.contents[item].id);
 				//console.log('name:'+ this.mate.contents[item].name);
 				//console.log('unidad:'+ this.mate.contents[item].unity_id);
-				//this.arrayCosas[item] = [this.mate.activities[item].id, this.mate.activities[item].name, this.mate.activities[item].unity_id, this.mate.activities[item].url_pdf];		
+				this.arrayCosas[item] = [this.mate.homeworks[item].id, this.mate.homeworks[item].name, this.mate.homeworks[item].unity_id];		
 				
 			}	
 		}, (err) => {
@@ -43,12 +43,11 @@ mate : any;
 		});
   }
 
-   activityindi(id, name, url) {
-	console.log('Actividad Id:'+id+' name:'+name+' url:'+url);
-    this.navCtrl.push(PortafolioindiPage, {
+   activityindi(id, name) {
+	console.log('Actividad Id:'+id+' name:'+name);
+    this.navCtrl.push(PortafoliotareaindiPage, {
 		portafolioid: id,
 		portafolioname: name,
-		portafoliourl: url,
 		grupoid: this.mateid
 	});
   }

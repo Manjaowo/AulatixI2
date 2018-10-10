@@ -57,7 +57,7 @@ export class RegisterPage {
   }
   ciuPage() {
 	if(this.registerdata.state_id == "Estado"){
-		//console.log('Seleccione un estado');
+		console.log('Seleccione un estado');
 		this.arrayCosas2 = [];
 	}
 	else{
@@ -66,8 +66,8 @@ export class RegisterPage {
 			for(let item in this.data2){
 				this.arrayCosas2[item] = [this.data2[item].id,this.data2[item].name, this.data2[item].state_id];
 			}
-			//console.log("Ciudades");
-			//console.log(this.data2);
+			console.log("Ciudades");
+			console.log(this.data2);
 		}, (err) => {
 			console.error(err);
 		});

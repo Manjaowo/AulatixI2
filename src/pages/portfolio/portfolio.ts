@@ -39,10 +39,6 @@ export class PortfolioPage {
 				
 			}
 			
-
-			
-
-			
 		}, (err) => {
 			console.error(err);
 		});
