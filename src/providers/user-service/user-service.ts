@@ -46,8 +46,9 @@ export class UserService {
 		});
 	}
 	porthomeworkupload(portfolio) {
+		//alert(apiUrl+'homeworks/'+portfolio.portfolio_homework_id+'/picture/');
 		return new Promise((resolve, reject) => {
-			this.http.post(apiUrl+'portfolio/picture', portfolio, {headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token'),'Access-Control-Allow-Origin': 'https://www.aulatix.com' }})
+			this.http.post(apiUrl+'homeworks/'+portfolio.portfolio_homework_id+'/picture/', portfolio, {headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token'),'Access-Control-Allow-Origin': 'https://www.aulatix.com' }})
 			  .subscribe(res => {
 				resolve(res)
 			  }, (err) => {

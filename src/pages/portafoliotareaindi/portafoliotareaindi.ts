@@ -166,14 +166,11 @@ export class PortafoliotareaindiPage {
 	
 	public uploadImage2() {
 	var portfolio = { 	
-						user_id: this.user_id2,  
-						image: this.base64Image,
-						activity_id: this.activity_id2,
-						group_id: this.group_id2,
-						unity_id: this.unity_id2			
+						portfolio_homework_id: this.actid,  
+						image: this.base64Image	
 					};
 
-					this.userService.portfolioupload(portfolio).then((result) => {
+					this.userService.porthomeworkupload(portfolio).then((result) => {
 						console.log(result);
 						let alert = this.alertCtrl.create({
 							title: 'Captura Correcta',
