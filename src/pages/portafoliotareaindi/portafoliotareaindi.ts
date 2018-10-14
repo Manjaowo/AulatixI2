@@ -15,6 +15,8 @@ import { Camera ,CameraOptions } from '@ionic-native/camera';
  * Ionic pages and navigation.
  */
 
+declare var cordova: any;
+
 @IonicPage()
 @Component({
   selector: 'page-portafoliotareaindi',
