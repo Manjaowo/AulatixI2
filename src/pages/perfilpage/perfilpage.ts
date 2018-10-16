@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service/user-service';
 import { MenuController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the PerfilpagePage page.
@@ -47,7 +48,7 @@ export class PerfilpagePage {
 				teacher_ucode:null,
 				updated_at:null		
 				};	
-  constructor(public menu:MenuController , public navCtrl: NavController, public navParams: NavParams,  public userService: UserService) {
+  constructor(private alertCtrl: AlertController, public menu:MenuController , public navCtrl: NavController, public navParams: NavParams,  public userService: UserService) {
 	this.menu.enable(true);
 	  this.userService.profileget().then((result) => {
 			this.data = result;
@@ -109,15 +110,33 @@ export class PerfilpagePage {
 					console.error(err);
 				});
 				/*************************************************************************/
-				if(this.data.user.subsystem_id == "1"){
+				this.userdata.subsystem_id = this.data.user.subsystem_id;
+				/*if(this.data.user.subsystem_id == "1"){
 					this.userdata.subsystem_id = "General";
 				}else{
 					this.userdata.subsystem_id = "Técnico";
-				}
+				}*/
 				/*************************************************************************/
 		}, (err) => {
 			console.error(err);
 		});
+  }
+  Guardar(){
+	 console.log("Guardado");
+	 this.userService.perfiledit(this.userdata).then((result) => {
+					this.data2 = result;
+					console.error(this.data2.message);
+				}, (err) => {
+					console.error(err);
+					let alert = this.alertCtrl.create({
+							title: 'ERROR',
+							message: err.message 
+							,
+							buttons: ['Dismiss']
+					  });
+					  alert.present();
+				});	
+	 
   }
   
 }

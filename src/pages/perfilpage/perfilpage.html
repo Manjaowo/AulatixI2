@@ -10,19 +10,28 @@
 			<img class="perfil-img" src="assets/imgs/perfil.png" alt="aulatix perfil"  (click)="PerfilPage()" >
 		<div class="dashboard-row">
 				<p class="login-input15"><label>Información Personal</label></p>
-				<p class="Aulatix-input" >Nombre: {{userdata.name}}</p>
-				<p class="Aulatix-input" >Apellido: {{userdata.lastname}}</p>
-				<p class="Aulatix-input" >Correo: {{userdata.email}}</p>
-				<p class="Aulatix-input" >Cumpleaños: {{userdata.birthdate}}</p>
-				<p class="Aulatix-input" >Estado: {{userdata.state_id}}</p>
-				<p class="Aulatix-input" >Ciudad: {{userdata.city_id}}</p>
+				<p class="Aulatix-label">Nombre:</p>
+				<input [(ngModel)]="userdata.name" type="text" class="Aulatix-input">
+				<p class="Aulatix-label" >Apellido:</p>
+				<input [(ngModel)]="userdata.lastname" type="text" class="Aulatix-input">
+				<p class="Aulatix-label2" >Correo: {{userdata.email}}</p>
+				<!--<p class="Aulatix-label" >Contraseña:</p><input [(ngModel)]="userdata.password" type="password" class="Aulatix-input" >
+				<p class="Aulatix-label" >Confirmación:</p><input [(ngModel)]="userdata.password_confirmation" type="password" class="Aulatix-input" >-->
+				<p class="Aulatix-label" >Cumpleaños:</p>
+				<input [(ngModel)]="userdata.birthdate" type="text" class="Aulatix-input">
+				<p class="Aulatix-label2" >Estado: {{userdata.state_id}}</p>
+				<p class="Aulatix-label2" >Ciudad: {{userdata.city_id}}</p>
+				<p class="login-input15"><label>Información Escolar</label></p>
+				<p class="Aulatix-label">Clave del alumno:</p>
+				<input [(ngModel)]="userdata.student_ucode" type="text" class="Aulatix-input" >
+				<p class="Aulatix-label">Subsistema:</p>
+				<select [(ngModel)]="userdata.subsystem_id" class="Aulatix-select">
+				  <option value="1" >General</option>
+				  <option value="2" >Técnico</option>
+				</select>
+				<p class="Aulatix-label2">Escuela: {{userdata.school1_id}}</p>
+				<!--
 				
-				<!--<input [(ngModel)]="userdata.name" type="text" class="Aulatix-input" placeholder="Nombre" >
-				<input [(ngModel)]="userdata.lastname" type="text" class="Aulatix-input" placeholder="Apellido" >
-				<input [(ngModel)]="userdata.email" type="text" class="Aulatix-input" placeholder="Correo Electronico" >
-				<input [(ngModel)]="userdata.password" type="password" class="Aulatix-input" placeholder="Contraseña" >
-				<input [(ngModel)]="userdata.password_confirmation" type="password" class="Aulatix-input" placeholder="Confirmación Contraseña" >
-				<input [(ngModel)]="userdata.birthdate" type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" >
 				<select [(ngModel)]="userdata.state_id" class="Aulatix-select" (click)="ciuPage()">
 				  <option disabled selected hidden>Estado</option>
 				  <option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</option>
@@ -31,21 +40,12 @@
 				  <option disabled selected hidden>Ciudad</option>
 				  <option *ngFor="let item of arrayCosas2" value="{{item[0]}}">{{item[1]}}</option>
 				</select>-->
-				<p class="login-input15"><label>Información Escolar</label></p>
-				<p class="Aulatix-input">Clave del alumno: {{userdata.student_ucode}}</p>
-				<p class="Aulatix-input">Subsistema: {{userdata.subsystem_id}}</p>
-				<p class="Aulatix-input">Escuela: {{userdata.school1_id}}</p>
-				<!--<input [(ngModel)]="registerdata.student_ucode" type="text" class="Aulatix-input" placeholder="Clave del alumno" >
-				<select [(ngModel)]="registerdata.subsystem_id" class="Aulatix-select">
-				  <option disabled selected hidden>Subsistema</option>
-				  <option value="1" >General</option>
-				  <option value="2" >Técnico</option>
-				</select>
+				<!--
 				<select [(ngModel)]="registerdata.school1_id" class="Aulatix-select">
 				  <option disabled selected hidden>Escuela</option>
 				  <option *ngFor="let item of arrayCosas3" value="{{item[0]}}">{{item[1]}}</option>
-				</select>
-				<input (click)="Registrar()" type="submit" class="login-input5" value="Guardar">	-->
+				</select>-->
+				<input (click)="Guardar()" type="submit" class="login-input5" value="Guardar">
 		</div>
 	</div>
 </ion-content>

@@ -34,6 +34,16 @@ export class UserService {
 			reject(err);
 		  });
 	});
+	}
+	perfiledit(data) {
+	return new Promise((resolve, reject) => {
+		this.http.post(apiUrl+'users/profile', data, {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://www.aulatix.com'}})
+		  .subscribe(res => {
+			resolve(res)
+		  }, (err) => {
+			reject(err);
+		  });
+	});
 }
 	portfolioupload(portfolio) {
 		return new Promise((resolve, reject) => {
