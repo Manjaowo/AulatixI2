@@ -6,17 +6,41 @@
 -->
 	<at-menu></at-menu>
 <ion-content >
-	<div class="body-login">
+		<div class="dashboard-row">
 			<div class="registro-row">
 				<p class="registro-url">Registro</p>
 			</div> 
-			<div class="dashboard-row">
+				<!-- Nuevo formulario-->
+				<ion-input [(ngModel)]="registerdata.name" type="text"  class="Aulatix-input" placeholder="Nombre"></ion-input>
+				<ion-input [(ngModel)]="registerdata.lastname" type="text" class="Aulatix-input" placeholder="Apellido" ></ion-input>
+				<ion-input [(ngModel)]="registerdata.email" type="text" class="Aulatix-input" placeholder="Correo Electronico" ></ion-input>
+				<ion-input [(ngModel)]="registerdata.password" type="password" class="Aulatix-input" placeholder="Contraseña" ></ion-input>
+				<ion-input [(ngModel)]="registerdata.password_confirmation" type="password" class="Aulatix-input" placeholder="Confirmación Contraseña" ></ion-input>
+				<ion-select interface="popover" [(ngModel)]="registerdata.state_id" class="Aulatix-select "  (ionChange)="ciuPage()">
+				  <ion-option disabled selected hidden>Estado</ion-option>
+				  <ion-option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</ion-option>
+				</ion-select>
+				<ion-select interface="popover" [(ngModel)]="registerdata.city_id" class="Aulatix-select" (ionChange)="escuelaPage()">
+				  <ion-option disabled selected hidden>Ciudad</ion-option>
+				  <ion-option *ngFor="let item of arrayCosas2" value="{{item[0]}}">{{item[1]}}</ion-option>
+				</ion-select>
+				<ion-select interface="popover" [(ngModel)]="registerdata.subsystem_id" class="Aulatix-select" (ionChange)="subsisPage()">
+				  <ion-option disabled selected hidden>Subsistema</ion-option>
+				  <ion-option value="1" >General</ion-option>
+				  <ion-option value="2" >Técnico</ion-option>
+				</ion-select>
+				<ion-select interface="popover" [(ngModel)]="registerdata.school1_id" class="Aulatix-select">
+				  <ion-option disabled selected hidden>Escuela</ion-option>
+				  <ion-option *ngFor="let item of arrayCosas3" value="{{item[0]}}">{{item[1]}}</ion-option>
+				</ion-select>
+				<ion-input [(ngModel)]="registerdata.student_ucode" type="text" class="Aulatix-input" placeholder="Clave del alumno" ></ion-input>
+				<ion-input [(ngModel)]="registerdata.birthdate" type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" ></ion-input>
+				<!-- Viejo formulario
 				<input [(ngModel)]="registerdata.name" type="text" class="Aulatix-input" placeholder="Nombre" >
 				<input [(ngModel)]="registerdata.lastname" type="text" class="Aulatix-input" placeholder="Apellido" >
 				<input [(ngModel)]="registerdata.email" type="text" class="Aulatix-input" placeholder="Correo Electronico" >
 				<input [(ngModel)]="registerdata.password" type="password" class="Aulatix-input" placeholder="Contraseña" >
 				<input [(ngModel)]="registerdata.password_confirmation" type="password" class="Aulatix-input" placeholder="Confirmación Contraseña" >
-				<!-- (click)="ciuPage()"-->
 				<select [(ngModel)]="registerdata.state_id" class="Aulatix-select "  (click)="ciuPage()">
 				  <option disabled selected hidden>Estado</option>
 				  <option *ngFor="let item of arrayCosas" value="{{item[0]}}">{{item[1]}}</option>
@@ -35,8 +59,7 @@
 				  <option *ngFor="let item of arrayCosas3" value="{{item[0]}}">{{item[1]}}</option>
 				</select>
 				<input [(ngModel)]="registerdata.student_ucode" type="text" class="Aulatix-input" placeholder="Clave del alumno" >
-				<input [(ngModel)]="registerdata.birthdate" type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" >
+				<input [(ngModel)]="registerdata.birthdate" type="text" class="Aulatix-input" placeholder="Fecha de nacimiento" >-->
 				<input (click)="Registrar()" type="submit" class="login-input5" value="Registrarse">	
-			</div>
 		</div>
 </ion-content>

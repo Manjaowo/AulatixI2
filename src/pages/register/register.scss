@@ -1,10 +1,10 @@
 page-register {
-.btn-top-bar{
-//visibility:hidden !important;
+/*.btn-top-bar{
+visibility:hidden !important;
 display:none !important;
 }
 .per-top-bar{
-//visibility:hidden !important;
+visibility:hidden !important;
 display:none !important;
 }
 .logo-top-bar{
@@ -16,14 +16,33 @@ width:62%;
 	background-color:#fff;
 	width:100%;	
 	float:left;
+}*/
+#btn_sidebar{
+display:none !important;
 }
-
+.per-top-bar{
+display:none !important;
+}
+.logo-top-bar{
+	margin-left: 17% !important;
+	margin-right: 17% !important;
+	}
+.dashboard-row{
+		
+		width:100%;
+		height:500px;
+		background-image:url('/assets/imgs/fondo-dashboard.png');		
+		background-size: auto 80%;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-top:78px;
+		
+	}
 .registro-row{
 	background-color:#b71e30;
 	width:100%;
 	height: 55px;
 	padding-top:10px;
-	float:left;
 	margin-top:78px;
 }
 .registro-url{
@@ -36,7 +55,6 @@ width:62%;
 	text-align:center;
 	margin-bottom:15px;
 	color:white !important;
-	float:left;
 }
 .Aulatix-input{
 	//padding: 18px 15px !important;
@@ -53,6 +71,7 @@ width:62%;
 	//padding: 14px 15px !important;
 	padding: 0px 15px !important;
 	width:100%;
+	max-width:100% !important;
 	height:50px !important;
 	font-size:14px !important;
 	border-width:0px !important;
@@ -61,6 +80,7 @@ width:62%;
 	border-width: 0px 0px 2px 0px !important;
 	border-color: #eeeeee !important; 
 }
+.item-cover { width: 0; height: 0; }
 .Aulatix-select > option[disabled] { 
 	color:#808080 !important;
 } 
@@ -69,6 +89,9 @@ width:62%;
 	height:auto;
 	margin:20px 35% 10px;
 
+}
+.select-text{
+	margin-left:10px !important;
 }
 .login-input5{
 	background-color:#b71e30;

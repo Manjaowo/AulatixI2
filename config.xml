@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.Aulatix" version="1.0.53" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Aulatix ®</name>
+<widget id="com.Aulatix" version="1.0.58" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Aulatix</name>
     <description>Creamos una aplicación para el aula especialmente diseñada para el trabajo docente-estudiante, vinculando tecnología y educación, basados en el nuevo modelo educativo.</description>
     <author email="hola@donmesero.com" href="https://donmesero.com/">Don Mesero Creativo ®</author>
     <content src="index.html" />
